@@ -1,0 +1,15 @@
+import express from "express"
+import  cors from "cors"
+import router from "./routers/routers.js"
+
+const PORT = 3000;
+const server = express()
+server.use(cors())
+server.use(express.json())
+
+
+server.use('/api',router)
+
+server.listen(PORT,()=>{
+    console.log(`Server is working on ${PORT}`)
+})
