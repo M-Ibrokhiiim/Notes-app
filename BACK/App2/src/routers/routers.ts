@@ -4,16 +4,20 @@ import { createNotes,readNotes,updateNotes,deleteNotes } from "../controllers/co
 const router = Router()
 
 //POST
-router.post('/tasks/newTask',createNotes);
+router.post('/notes/newTask',createNotes);
 
 // GET
-router.get('/tasks',readNotes);
+router.get('/notes',readNotes);
 
 // PUT
-router.put('/tasks/update/:id',updateNotes)
+router.put('/notes/update/:id',updateNotes)
 
 // DELETE
-router.delete('/tasks/delete/:id',deleteNotes)
+router.delete('/notes/delete/:id',deleteNotes)
+
+
+// SEARCHING
+// router.get('/tasks')
 
 
 

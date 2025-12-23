@@ -7,7 +7,7 @@ export const createNotes = async(req:Request,res:Response,next:NextFunction)=>{
         try{
             const noteService = new notesService()
             const inService = await noteService.createNotes(req.body)
-            res.status(201).json({success:inService,message:"Note successfully created!"})
+            res.status(201).json({success:inService,message:"Note successfully created!",statusCode:201})
         }catch(err:any){
             const error:any = new Error(err)
             error.statusCode = 400
@@ -28,7 +28,7 @@ export const updateNotes = async(req:Request,res:Response,next:NextFunction)=>{
             try{
                 const noteService =new notesService()
                 const service_success = await noteService.updateNotes(req.body,req.params.id)
-                res.status(200).json({success:service_success,msg:"Task successfully updated!"})
+                res.status(200).json({success:service_success,msg:"Task successfully updated!",statusCode:200})
             }catch(err:any){
                 const error:any = new Error(err)
                 error.statusCode = 400
@@ -41,10 +41,20 @@ export const deleteNotes = async(req:Request,res:Response,next:NextFunction)=>{
      try{
         const inService = new notesService()
         const deletedNote = await inService.deleteNote(Number(req.params.id))
-        res.status(200).json({success:deletedNote,message:"Note successfully deleted!"})
+        res.status(200).json({success:deletedNote,message:"Note successfully deleted!",statusCode:200})
      }catch(err:any){
         const error:any = new Error(err)
         error.statusCode = 400
         next(error) 
      }
 }
+
+
+
+
+
+
+// BONUS(Searching notes by keyword)
+// export const searchingByKeyword = async(req:Request,res:Response,next:NextFunction)=>{
+     
+// }

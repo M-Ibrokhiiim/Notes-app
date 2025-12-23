@@ -10,6 +10,9 @@ server.use(express.json())
 
 server.use('/api',router)
 
+
+
+// BONUS 
 server.use(CentralErrorHandler)
 
 server.listen(PORT,()=>{
