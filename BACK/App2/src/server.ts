@@ -3,6 +3,7 @@ import  cors from "cors"
 import router from "./routers/routers.js"
 import { CentralErrorHandler } from "./middlewares/err.middleware.js";
 
+
 const PORT = 3000;
 const server = express()
 server.use(cors())

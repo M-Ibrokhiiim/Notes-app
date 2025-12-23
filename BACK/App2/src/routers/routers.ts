@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createNotes,readNotes,updateNotes,deleteNotes } from "../controllers/controllers.js";
+import { createNotes,readNotes,updateNotes,deleteNotes,searchingByKeyword } from "../controllers/controllers.js";
 
 const router = Router()
 
@@ -17,7 +17,7 @@ router.delete('/notes/delete/:id',deleteNotes)
 
 
 // SEARCHING
-// router.get('/tasks')
+router.get('/notes/search',searchingByKeyword)
 
 
 
