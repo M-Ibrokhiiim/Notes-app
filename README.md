@@ -67,9 +67,6 @@ Make sure you have the following installed on your machine:
    Create a `.env` file in the root directory:
    ```env
    PORT=3000
-   NODE_ENV=development
-   DATA_PATH=./DATA
-   DATA_FILE=TASKS.json
    ```
 
 5. **Run the development server**
